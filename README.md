@@ -1,20 +1,23 @@
 **Case-Note Document Generator**
 🖥️ Tech Stack 🖥️
+
 Built with Python, Openpyxl, Docx
 
-💡 Inspiration 💡
+💡 **Inspiration** 💡
+
 In educational settings, maintaining comprehensive and well-organized documentation for student cases is crucial. This process, however, can be time-consuming and prone to human error. Our solution automates the creation of reflection documents, transforming raw data into well-structured Word documents. By leveraging the power of Python libraries and language models, we aim to simplify documentation tasks, enhance accuracy, and free up time for more critical activities.
 
-What is Case-Note Document Generator?
+**What is Case-Note Document Generator?**
 The Case-Note Document Generator is a Python-based tool designed to automate the creation of student reflection documents. It extracts data from an Excel file and generates a formatted Word document, including sections for student details, issues and resolutions, and records of support. The tool uses advanced language models to summarize and convert text, ensuring clear and concise output.
 
-Key Features:
+**Key Features:**
 Excel Integration: Monitors an Excel file for updates and automatically generates a Word document when new data is detected.
 Dynamic Content: Uses language models to summarize input text and generate past tense descriptions.
 Custom Formatting: Creates tables with borders and formatted text for easy readability and professional presentation.
-🔧 How We Built It 🔧
 
-The script is designed to monitor an Excel file for updates, extract relevant data, and create a Word document with the following components:
+🔧 **How I Built It** 🔧
+
+The script is designed to take rows from an Excel file, and create a Word document with the following components:
 
 Frontend: The user interacts with an Excel file, which serves as the data source.
 Backend: Python script processes the data using libraries such as Openpyxl for reading Excel files and Docx for creating Word documents.
