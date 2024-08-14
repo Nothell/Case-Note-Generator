@@ -31,7 +31,7 @@ create_borders(table): Adds borders to tables in the Word document for improved 
 create_word_document(data, filename): Generates a Word document with formatted sections based on the extracted data.
 monitor_excel_file(excel_filename, word_filename): Monitors the specified Excel file for updates and triggers document creation.
 
-👀 What's Next for Case-Note Document Generator? 👀
+👀 **What's Next for Case-Note Document Generator?** 👀
 
 Enhanced Functionality: Explore additional features such as reading from emails to extend on the existing case notes.
 User Interface: Consider developing a user-friendly interface for easier interaction and configuration.
