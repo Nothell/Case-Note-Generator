@@ -1,7 +1,6 @@
 **Case-Note Document Generator**
-🖥️ Tech Stack 🖥️
 
-Built with Python, Openpyxl, Docx, LLAMA3 and ♥ 
+🖥️ Tech Stack 🖥️ Built with Python, Openpyxl, Docx, LLAMA3 and ♥ 
 
 💡 **Inspiration** 💡
 
