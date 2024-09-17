@@ -6,6 +6,7 @@ from docx.oxml import OxmlElement
 import os
 import replicate
 from langchain_community.llms import Ollama
+import datetime
 
 
 def cutPretext(result):
@@ -13,7 +14,7 @@ def cutPretext(result):
     temp = ""
     for item in result:
         temp+=item
-        if temp != 'Output Started:' or temp != 'Output Ended.':
+        if temp != 'Output Started:' or temp != 'Output Ended:':
             full_response += item
         if len(temp) == 4:
             temp = ""
@@ -101,9 +102,24 @@ def create_word_document(data, filename):
             hdr_cells[0].text = 'DATE'
             hdr_cells[1].text = 'NOTES'
         elif i == 1:
-            hdr_cells[0].text = '2024-06-29'
-            hdr_cells[1].text = "Case Information: "+ summarize(data[13])
+            if isinstance(data[2], datetime.datetime):
+                hdr_cells[0].text = data[2].strftime('%Y-%m-%d')  # Adjust the format as needed
+                hdr_cells[1].text = "Case Information: "+ summarize(data[13])
+            else:
+                hdr_cells[0].text = str(data[2])
     create_borders(table)
+
+    document.add_heading('CLOSED STATUS', level=1)
+    table = document.add_table(rows=2, cols=2)
+    table.autofit = True
+
+    for i in range(2):
+        hdr_cells = table.rows[i].cells
+        if i == 0:
+            hdr_cells[0].text = 'DATE CLOSED'
+            hdr_cells[1].text = 'RESOLUTION OUTCOME'
+    create_borders(table)
+
     document.save(filename)
 
 def monitor_excel_file(excel_filename, word_filename):
